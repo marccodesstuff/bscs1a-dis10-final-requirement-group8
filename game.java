@@ -1,10 +1,10 @@
 import java.util.Scanner;
 
-public class familyfeud {
+public class game {
     public static void main(String[] args) {
         Scanner userInput = new Scanner(System.in);
 
-        System.out.println("Welcome to the (NOT) Family Feud!");
+        System.out.println("Welcome to Guess the Words!");
         System.out.print("Enter your name: ");
         String name = userInput.nextLine();
 
@@ -16,8 +16,7 @@ public class familyfeud {
         int score = 0;
 
         String[] wordList = { "Sets | 10", "Logic and Proof | 25", "Sequences | 10", "Prime and Composite Numbers | 10",
-                "Converse, Inverse, and Contrapositive | 15", "Union | 5", "Mathematical Statements | 10",
-                "Quantifiers | 5" };
+                "Subsets | 15", "Union | 5" };
 
         String word1 = "?";
         String word2 = "?";
@@ -25,10 +24,8 @@ public class familyfeud {
         String word4 = "?";
         String word5 = "?";
         String word6 = "?";
-        String word7 = "?";
-        String word8 = "?";
 
-        while (crosses < 3 && correct < 8) {
+        while (crosses < 3 && correct < 6) {
             System.out.println("----------");
             System.out.println("[ " + ((crosses >= 1) ? "X" : " ") + " ] " + "[ " + ((crosses >= 2) ? "X" : " ") + " ] "
                     + "[ " + ((crosses >= 3) ? "X" : " ") + " ] ");
@@ -42,8 +39,6 @@ public class familyfeud {
             System.out.println("[ " + word4 + " ]");
             System.out.println("[ " + word5 + " ]");
             System.out.println("[ " + word6 + " ]");
-            System.out.println("[ " + word7 + " ]");
-            System.out.println("[ " + word8 + " ]");
             System.out.println("----------");
 
             System.out.println("Enter your answer: ");
@@ -61,10 +56,6 @@ public class familyfeud {
                 case ("numeral sets"):
                 case ("universal set"):
                 case ("universal sets"):
-                case ("subset"):
-                case ("subsets"):
-                case ("proper subset"):
-                case ("proper subsets"):
                 case ("empty set"):
                 case ("empty sets"):
                 case ("null set"):
@@ -94,6 +85,7 @@ public class familyfeud {
                         break;
                     }
                 case ("sequence"):
+                case ("sequences"):
                 case ("infinite"):
                 case ("finite"):
                 case ("arithmetic sequence"):
@@ -132,9 +124,10 @@ public class familyfeud {
                         correct++;
                         break;
                     }
-                case ("converse"):
-                case ("inverse"):
-                case ("contrapositive"):
+                case ("subset"):
+                case ("subsets"):
+                case ("proper subset"):
+                case ("proper subsets"):
                     if (word5 != "?") {
                         System.out.println("You have answered this question already.");
                         break;
@@ -145,6 +138,7 @@ public class familyfeud {
                         break;
                     }
                 case ("union"):
+                case ("unions"):
                     if (word6 != "?") {
                         System.out.println("You have answered this question already.");
                         break;
@@ -154,73 +148,20 @@ public class familyfeud {
                         correct++;
                         break;
                     }
-                case ("mathematical statement"):
-                case ("mathematical statements"):
-                case ("atomic statement"):
-                case ("atomic statements"):
-                case ("molecular statement"):
-                case ("molecular statements"):
-                case ("conjunction"):
-                case ("conjunctions"):
-                case ("disjunction"):
-                case ("disjunctions"):
-                case ("negation"):
-                case ("negations"):
-                case ("implication"):
-                case ("implications"):
-                case ("conditional"):
-                case ("conditionals"):
-                case ("biconditional"):
-                case ("biconditionals"):
-                case ("logical connective"):
-                case ("logical connectives"):
-                case ("and"):
-                case ("or"):
-                case ("not"):
-                case ("if-then"):
-                case ("if...then..."):
-                case ("if and only if"):
-                case ("^"):
-                case ("v"):
-                case ("~"):
-                case ("-->"):
-                case ("->"):
-                case ("<->"):
-                case ("<-->"):
-                    if (word7 != "?") {
-                        System.out.println("You have answered this question already.");
-                        break;
-                    } else {
-                        word7 = wordList[6];
-                        score += 10;
-                        correct++;
-                        break;
-                    }
-                case ("quantifier"):
-                case ("quantifiers"):
-                    if (word8 != "?") {
-                        System.out.println("You have answered this question already.");
-                        break;
-                    } else {
-                        word8 = wordList[7];
-                        score += 5;
-                        correct++;
-                        break;
-                    }
                 default:
                     crosses++;
                     break;
             }
         }
-
         if (crosses < 3) {
-            System.out.println("Congratulations! You completed this set!");
+            System.out.println("Congratulations! You completed this level!");
         } else {
             System.out.println("Better luck next time!");
         }
 
         System.out.println("Thank you for playing, " + name);
         System.out.println("Score: " + score);
+
         userInput.close();
     }
 }
