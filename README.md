@@ -25,4 +25,4 @@ This should run the application.
 
 ## **Contact**
 
-If there are issues with the operation of the application, please contact Marc Velasquez through Microsoft Teams (velasquez.marcvictor@auf.edu.ph).
+If there are issues with the operation of the application, please contact Marc Velasquez through Microsoft Teams (velasquez.marcvictor@auf.edu.ph). You may also access the GitHub repository of the project through <a href="https://github.com/marccodesstuff/bscs1a-dis10-final-requirement-group8">this link</a>.
